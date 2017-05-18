@@ -1,0 +1,18 @@
+// Define version in a single place
+ext {
+
+    // App dependencies
+    supportLibraryVersion = '25.3.1'
+
+    // Test dependencies
+    junitVersion = '4.12'
+    espressoVersion = '2.2.2'
+
+    dependencies = [
+            appCompat       :   "com.android.support:appcompat-v7:$supportLibraryVersion",
+            vectorDrawable :   "com.android.support:support-vector-drawable:$supportLibraryVersion",
+
+            espressoCore    :   "com.android.support.test.espresso:espresso-core:$espressoVersion",
+            junit           :   "junit:junit:$junitVersion"
+    ]
+}
