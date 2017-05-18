@@ -1,4 +1,4 @@
-package com.sinhdroid.trillbit.app.module.base;
+package com.sinhadroid.trillbit.app.base;
 
 import android.support.annotation.StringRes;
 

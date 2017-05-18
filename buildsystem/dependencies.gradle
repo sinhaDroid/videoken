@@ -4,14 +4,19 @@ ext {
     // App dependencies
     supportLibraryVersion = '25.3.1'
 
+    butterknifeVersion = '8.5.1'
+
     // Test dependencies
     junitVersion = '4.12'
     espressoVersion = '2.2.2'
 
     dependencies = [
-            appcompat       :   "com.android.support:appcompat-v7:$supportLibraryVersion",
-            design          :   "com.android.support:design:$supportLibraryVersion",
-            vectorDrawable  :   "com.android.support:support-vector-drawable:$supportLibraryVersion",
+            appcompat           :   "com.android.support:appcompat-v7:$supportLibraryVersion",
+            design              :   "com.android.support:design:$supportLibraryVersion",
+            vectorDrawable      :   "com.android.support:support-vector-drawable:$supportLibraryVersion",
+
+            butterknife         :   "com.jakewharton:butterknife:$butterknifeVersion",
+            butterknifeCompiler :   "com.jakewharton:butterknife-compiler:$butterknifeVersion",
 
             espressoCore    :   "com.android.support.test.espresso:espresso-core:$espressoVersion",
             junit           :   "junit:junit:$junitVersion"

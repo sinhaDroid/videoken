@@ -46,6 +46,10 @@ dependencies {
     compile dependencies.design
     compile dependencies.vectorDrawable
 
+    // butterknife for view
+    compile dependencies.butterknife
+    annotationProcessor dependencies.butterknifeCompiler
+
     // UI Testing
     testCompile dependencies.junit
     androidTestCompile(dependencies.espressoCore, {

@@ -1,4 +1,4 @@
-package com.sinhdroid.trillbit.app;
+package com.sinhadroid.trillbit.app;
 
 /**
  * Created by deepanshu on 18/5/17.

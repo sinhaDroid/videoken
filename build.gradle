@@ -33,6 +33,6 @@ ext {
     androidMinSdkVersion = 16
     androidTargetSdkVersion = 25
 
-    androidApplicationIdStage = "com.sinhdroid.trillbit.app.stage"
-    androidApplicationIdProduction = "com.sinhdroid.trillbit.app"
+    androidApplicationIdStage = "com.sinhadroid.trillbit.app.stage"
+    androidApplicationIdProduction = "com.sinhadroid.trillbit.app"
 }

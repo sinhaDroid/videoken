@@ -1,4 +1,4 @@
-package com.sinhdroid.trillbit.app;
+package com.sinhadroid.trillbit.app;
 
 import org.junit.Test;
 

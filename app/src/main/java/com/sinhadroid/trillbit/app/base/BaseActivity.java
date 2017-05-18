@@ -1,4 +1,4 @@
-package com.sinhdroid.trillbit.app.module.base;
+package com.sinhadroid.trillbit.app.base;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
-import com.sinhdroid.trillbit.app.R;
-import com.sinhdroid.trillbit.app.utils.CommonUtils;
+import com.sinhadroid.trillbit.app.R;
+import com.sinhadroid.trillbit.app.utils.CommonUtils;
 
 public class BaseActivity extends AppCompatActivity implements BaseView {
 

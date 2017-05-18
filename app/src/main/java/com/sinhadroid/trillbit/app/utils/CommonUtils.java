@@ -1,4 +1,4 @@
-package com.sinhdroid.trillbit.app.utils;
+package com.sinhadroid.trillbit.app.utils;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -7,7 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.provider.Settings;
 
-import com.sinhdroid.trillbit.app.R;
+import com.sinhadroid.trillbit.app.R;
 
 public final class CommonUtils {
 

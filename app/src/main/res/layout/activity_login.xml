@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sinhdroid.trillbit.app.module.TrillbitActivity">
+    tools:context="com.sinhadroid.trillbit.app.module.login.LoginActivity">
 
     <TextView
         android:layout_width="wrap_content"
