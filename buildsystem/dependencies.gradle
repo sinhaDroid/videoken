@@ -12,7 +12,9 @@ ext {
 
     dependencies = [
             appcompat           :   "com.android.support:appcompat-v7:$supportLibraryVersion",
+            cardview            :   "com.android.support:cardview-v7:$supportLibraryVersion",
             design              :   "com.android.support:design:$supportLibraryVersion",
+            recyclerview        :   "com.android.support:recyclerview-v7:$supportLibraryVersion",
             vectorDrawable      :   "com.android.support:support-vector-drawable:$supportLibraryVersion",
 
             butterknife         :   "com.jakewharton:butterknife:$butterknifeVersion",

@@ -6,7 +6,7 @@ import android.support.annotation.StringRes;
  * Created by deepanshu on 18/5/17.
  */
 
-interface BaseView {
+public interface BaseView {
 
     void showLoading();
 

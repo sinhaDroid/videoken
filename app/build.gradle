@@ -43,7 +43,9 @@ dependencies {
 
     // android support libraries
     compile dependencies.appcompat
+    compile dependencies.cardview
     compile dependencies.design
+    compile dependencies.recyclerview
     compile dependencies.vectorDrawable
 
     // butterknife for view
