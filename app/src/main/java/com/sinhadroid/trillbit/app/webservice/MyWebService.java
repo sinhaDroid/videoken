@@ -5,6 +5,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
+import com.sinhadroid.trillbit.app.module.converter.JacksonConverterFactory;
+import com.sinhadroid.trillbit.app.module.login.model.dto.LogInRequest;
+import com.sinhadroid.trillbit.app.module.login.model.dto.LogInResponse;
 
 import java.io.InputStream;
 import java.util.Map;
@@ -13,8 +16,8 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
 import retrofit2.Retrofit;
-import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class MyWebService {
 
@@ -28,13 +31,13 @@ public class MyWebService {
 
     private ObjectMapper mObjectMapper;
 
-    public void init(String apiBaseUrl) {
+    public void init(String apiBaseUrl, Interceptor header) {
 
         // Initialize Trillbit Api service using retrofit
-        initTrillbitService(apiBaseUrl);
+        initTrillbitService(apiBaseUrl, header);
     }
 
-    private void initTrillbitService(String baseUrl) {
+    private void initTrillbitService(String baseUrl, Interceptor header) {
 
         // Initialize ObjectMapper
         initObjectMapper();
@@ -42,24 +45,18 @@ public class MyWebService {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(JacksonConverterFactory.create(mObjectMapper))
+                .client(getCustomHttpClient(header))
                 .build();
         mTrillbitService = retrofit.create(TrillbitService.class);
     }
 
-    private OkHttpClient getCustomHttpClient(Interceptor requestInterceptor, InputStream inputStream) {
+    private OkHttpClient getCustomHttpClient(Interceptor header) {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.connectTimeout(30, TimeUnit.SECONDS);
         httpClient.readTimeout(30, TimeUnit.SECONDS);
 
         // add header as interceptor
-        httpClient.addNetworkInterceptor(requestInterceptor);
-
-        // TODO: remove
-        /*try {
-            httpClient.sslSocketFactory(addCertificate(inputStream));
-        } catch (CertificateException | NoSuchAlgorithmException | IOException | KeyStoreException | KeyManagementException e) {
-            e.printStackTrace();
-        }*/
+        httpClient.addNetworkInterceptor(header);
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         // set your desired log level
@@ -87,6 +84,16 @@ public class MyWebService {
         return null;
     }
 
+    public <T> T getObjectFromJson(String json, TypeReference<T> typeReference) {
+        try {
+            return mObjectMapper.readValue(json, typeReference);
+        } catch (Exception e) {
+            // TODO: Crashlytics
+//            ExceptionTracker.track(e);
+        }
+        return null;
+    }
+
     public <T> T getObjectFromJson(String json, Class<T> classType) {
         try {
             return mObjectMapper.readValue(json, classType);
@@ -107,16 +114,6 @@ public class MyWebService {
         return null;
     }
 
-    public <T> T getObjectFromJson(String json, TypeReference<T> typeReference) {
-        try {
-            return mObjectMapper.readValue(json, typeReference);
-        } catch (Exception e) {
-            // TODO: Crashlytics
-//            ExceptionTracker.track(e);
-        }
-        return null;
-    }
-
     public <T> T getObjectFromObject(Object object, Class<T> classType) {
         try {
             return (T) mObjectMapper.convertValue(object, Map.class);
@@ -125,5 +122,9 @@ public class MyWebService {
 //            ExceptionTracker.track(e);
         }
         return null;
+    }
+
+    public Call<LogInResponse> getLogInRequest(LogInRequest logInRequest) {
+        return mTrillbitService.callLoginApi(logInRequest);
     }
 }

@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.support.annotation.StringRes;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,6 +17,11 @@ import com.sinhadroid.trillbit.app.utils.CommonUtils;
 public class BaseActivity extends AppCompatActivity implements BaseView {
 
     private ProgressDialog mProgressDialog;
+
+    @Override
+    public FragmentActivity getActivity() {
+        return BaseActivity.this;
+    }
 
     @Override
     public void showLoading() {

@@ -1,16 +1,14 @@
 package com.sinhadroid.trillbit.app.webservice;
 
+import com.sinhadroid.trillbit.app.module.login.model.dto.LogInRequest;
+import com.sinhadroid.trillbit.app.module.login.model.dto.LogInResponse;
+
+import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.POST;
+
 interface TrillbitService {
 
-    /*@GET("v1/articles")
-    Call<ArticlesResponse> callArticlesApi(@Query("source") String source, @Query("sortBy") String sortBy, @Query("apiKey") String s);
-
-    @GET("v1/sources")
-    Call<SourcesResponse> callSourcesApi(@Query("category") String category, @Query("language") String language, @Query("country") String country);
-
-    @GET("wp-json/wp/v2/posts")
-    Call<List<BlogResponse>> callRanchiBlogList(@Query("per_page") int number_of_post);
-
-    @GET("wp-json/wp/v2/media/{id}")
-    Call<ImageResponse> callRanchiFullImage(@Path("id") int url);*/
+    @POST("v1/login/")
+    Call<LogInResponse> callLoginApi(@Body LogInRequest logInRequest);
 }

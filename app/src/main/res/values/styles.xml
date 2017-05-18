@@ -16,6 +16,12 @@
         <item name="drawerArrowStyle">@style/MaterialDrawer.DrawerArrowStyle</item>
     </style>
 
+    <style name="AppThemeFullScreen" parent="AppTheme">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
     <style name="MaterialDrawer.DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">false</item>
         <item name="color">@color/white</item>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "869911479338",
+    "project_id": "trillbit-e8b9f"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869911479338:android:47df204844411a54",
+        "android_client_info": {
+          "package_name": "com.sinhadroid.trillbit.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869911479338-2atebj2diube47e8ifheqbiqs8rsglii.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sinhadroid.trillbit.app",
+            "certificate_hash": "05022c9831ba14c8cfc5defc5e85d79f710fa228"
+          }
+        },
+        {
+          "client_id": "869911479338-e2122afmhs6j10gob584rbesh6oum9s9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYnUlSLgbqYij1g41ZjlB0crwSTSXeNU0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

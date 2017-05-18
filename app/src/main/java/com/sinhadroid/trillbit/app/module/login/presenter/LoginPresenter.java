@@ -1,9 +1,11 @@
 package com.sinhadroid.trillbit.app.module.login.presenter;
 
-/**
- * Created by deepanshu on 18/5/17.
- */
+import android.content.Intent;
 
 public interface LoginPresenter {
-    void onCreate();
+    void onClickGoogle();
+
+    void onClickFacebook();
+
+    void onActivityResult(int requestCode, int resultCode, Intent data);
 }

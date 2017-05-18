@@ -2,6 +2,8 @@ package com.sinhadroid.trillbit.app.webservice;
 
 import android.util.Log;
 
+import com.sinhadroid.trillbit.app.Trillbit;
+
 import okhttp3.MediaType;
 import okhttp3.Protocol;
 import okhttp3.Request;
@@ -17,7 +19,7 @@ public abstract class TrillbitCallBack<T> implements Callback<T> {
     public void onResponse(Call<T> call, Response<T> response) {
         // checking if it not authorized
         if (response.code() == 401) {
-            // TODO: not authorize
+            Trillbit.getInstance().logout();
         }
     }
 

@@ -1,10 +1,11 @@
 package com.sinhadroid.trillbit.app.module.login.view;
 
+import android.content.Intent;
+
 import com.sinhadroid.trillbit.app.base.BaseView;
 
-/**
- * Created by deepanshu on 18/5/17.
- */
-
 public interface LoginView extends BaseView {
+    void signInGoogle(Intent intent, int requestCode);
+
+    void navigateToHomeActivity();
 }
