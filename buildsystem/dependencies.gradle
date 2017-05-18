@@ -1,25 +1,34 @@
 // Define version in a single place
 ext {
 
-    // App dependencies
     supportLibraryVersion = '25.3.1'
-
     butterknifeVersion = '8.5.1'
-
-    // Test dependencies
+    retrofitVersion = '2.0.2'
+    javaxAnnotationVersion = '10.0-b28'
+    okhttp3Version = '3.2.0'
     junitVersion = '4.12'
     espressoVersion = '2.2.2'
 
     dependencies = [
+            // App dependencies
             appcompat           :   "com.android.support:appcompat-v7:$supportLibraryVersion",
             cardview            :   "com.android.support:cardview-v7:$supportLibraryVersion",
             design              :   "com.android.support:design:$supportLibraryVersion",
             recyclerview        :   "com.android.support:recyclerview-v7:$supportLibraryVersion",
             vectorDrawable      :   "com.android.support:support-vector-drawable:$supportLibraryVersion",
 
+            // Butterknife dependencies
             butterknife         :   "com.jakewharton:butterknife:$butterknifeVersion",
             butterknifeCompiler :   "com.jakewharton:butterknife-compiler:$butterknifeVersion",
 
+            // JacksonConverter dependencies
+            converterJackson    :   "com.squareup.retrofit2:converter-jackson:$retrofitVersion",
+            javaxAnnotation     :   "org.glassfish:javax.annotation:$javaxAnnotationVersion",
+
+            // OkHttp3 dependencies
+            loggingInterceptor  :   "com.squareup.okhttp3:logging-interceptor:$okhttp3Version",
+
+            // Test dependencies
             espressoCore    :   "com.android.support.test.espresso:espresso-core:$espressoVersion",
             junit           :   "junit:junit:$junitVersion"
     ]

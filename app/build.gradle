@@ -52,6 +52,13 @@ dependencies {
     compile dependencies.butterknife
     annotationProcessor dependencies.butterknifeCompiler
 
+    // To parse the json output using the Jackson parser
+    compile dependencies.converterJackson
+    compile dependencies.javaxAnnotation
+
+    // To log all the request and response which is happened through okhttp
+    compile dependencies.loggingInterceptor
+
     // UI Testing
     testCompile dependencies.junit
     androidTestCompile(dependencies.espressoCore, {
