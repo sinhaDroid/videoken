@@ -9,8 +9,9 @@ ext {
     espressoVersion = '2.2.2'
 
     dependencies = [
-            appCompat       :   "com.android.support:appcompat-v7:$supportLibraryVersion",
-            vectorDrawable :   "com.android.support:support-vector-drawable:$supportLibraryVersion",
+            appcompat       :   "com.android.support:appcompat-v7:$supportLibraryVersion",
+            design          :   "com.android.support:design:$supportLibraryVersion",
+            vectorDrawable  :   "com.android.support:support-vector-drawable:$supportLibraryVersion",
 
             espressoCore    :   "com.android.support.test.espresso:espresso-core:$espressoVersion",
             junit           :   "junit:junit:$junitVersion"

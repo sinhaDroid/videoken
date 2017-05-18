@@ -1,9 +1,11 @@
-package com.example.deepanshu.myapplication;
+package com.sinhdroid.trillbit.app.module;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class TrillbitActivity extends AppCompatActivity {
+import com.sinhdroid.trillbit.app.R;
+import com.sinhdroid.trillbit.app.module.base.BaseActivity;
+
+public class TrillbitActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

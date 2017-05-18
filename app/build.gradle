@@ -17,13 +17,11 @@ android {
     productFlavors {
         stage {
             applicationId globalConf.androidApplicationIdStage
-            buildConfigField("String", "BASE_URL", "\"http://www.mocky.io/v2\"")
-            buildConfigField("String", "API_KEY", "\"ABCXYZ123TEST\"")
+            buildConfigField("String", "BASE_URL", "\"http://54.169.234.17:8083\"")
         }
         production {
             applicationId globalConf.androidApplicationIdProduction
-            buildConfigField("String", "BASE_URL", "\"http://www.mocky.io/v2\"")
-            buildConfigField("String", "API_KEY", "\"ABCXYZ123TEST\"")
+            buildConfigField("String", "BASE_URL", "\"http://54.169.234.17:8083\"")
         }
     }
     buildTypes {
@@ -37,26 +35,20 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        debuggable.initWith(buildTypes.debug)
-        debuggable {
-            testCoverageEnabled = false
-        }
-    }
-    sourceSets {
-        debuggable {
-            res.srcDirs = ['src/debug/res']
-            java.srcDirs = ['src/debug/java']
-        }
     }
 }
 
 dependencies {
     Map<String, String> dependencies = globalConf.dependencies;
 
+    // android support libraries
+    compile dependencies.appcompat
+    compile dependencies.design
+    compile dependencies.vectorDrawable
+
+    // UI Testing
+    testCompile dependencies.junit
     androidTestCompile(dependencies.espressoCore, {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile dependencies.appCompat
-    compile dependencies.vectorDrawable
-    testCompile dependencies.junit
 }
