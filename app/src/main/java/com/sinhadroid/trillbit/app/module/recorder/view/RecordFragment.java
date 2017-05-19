@@ -19,8 +19,6 @@ import butterknife.BindView;
 
 public class RecordFragment extends TrillbitFragment implements RecordView {
 
-    private int position;
-
     //Recording controls
     private FloatingActionButton mRecordButton = null;
     private Button mPauseButton = null;
@@ -39,20 +37,8 @@ public class RecordFragment extends TrillbitFragment implements RecordView {
 
     private RecordPresenter mRecordPresenter;
 
-    public static RecordFragment newInstance(int position) {
-
-        Bundle args = new Bundle();
-        args.putInt(Constants.BundleKeys.ARG_POSITION, position);
-
-        RecordFragment fragment = new RecordFragment();
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        position = getArguments().getInt(Constants.BundleKeys.ARG_POSITION);
+    public static RecordFragment newInstance() {
+        return new RecordFragment();
     }
 
     @Override
@@ -62,7 +48,6 @@ public class RecordFragment extends TrillbitFragment implements RecordView {
 
     @Override
     protected void onViewCreated(Bundle savedInstanceState) {
-        position = getArguments().getInt(Constants.BundleKeys.ARG_POSITION);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);

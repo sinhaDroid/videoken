@@ -3,14 +3,15 @@ package com.sinhadroid.trillbit.app.module.productinfo.view;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.View;
 
 import com.sinhadroid.trillbit.app.R;
 import com.sinhadroid.trillbit.app.module.common.TrillbitFragment;
-import com.sinhadroid.trillbit.app.module.offline.RecordDataHandler;
 import com.sinhadroid.trillbit.app.module.productinfo.presenter.ProductPresenter;
 import com.sinhadroid.trillbit.app.module.productinfo.presenter.ProductPresenterImpl;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class ProductFragment extends TrillbitFragment implements ProductView {
 
@@ -19,11 +20,9 @@ public class ProductFragment extends TrillbitFragment implements ProductView {
 
     private StaggeredGridLayoutManager mStaggeredGridLayoutManager;
 
-    private ProductPresenter mProductPresenter;
+    private boolean gridview;
 
-    private boolean listview;
-
-    public static ProductFragment newInstance(int position) {
+    public static ProductFragment newInstance() {
         return new ProductFragment();
     }
 
@@ -40,7 +39,7 @@ public class ProductFragment extends TrillbitFragment implements ProductView {
         );
         mRecyclerView.setLayoutManager(mStaggeredGridLayoutManager);
 
-        this.mProductPresenter = ProductPresenterImpl.newInstance(this);
+        ProductPresenter mProductPresenter = ProductPresenterImpl.newInstance(this);
         mProductPresenter.onCreate();
     }
 
@@ -49,13 +48,14 @@ public class ProductFragment extends TrillbitFragment implements ProductView {
         mRecyclerView.setAdapter(productAdapter);
     }
 
-    private void switchView() {
-        if (listview) {
-            listview = false;
-            mStaggeredGridLayoutManager.setSpanCount(2);
-        } else {
-            listview = true;
+    @OnClick(R.id.btnswitch)
+    public void onClickSwitch(View view) {
+        if (gridview) {
+            gridview = false;
             mStaggeredGridLayoutManager.setSpanCount(1);
+        } else {
+            gridview = true;
+            mStaggeredGridLayoutManager.setSpanCount(2);
         }
     }
 }

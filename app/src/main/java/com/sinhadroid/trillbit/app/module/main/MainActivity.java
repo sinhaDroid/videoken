@@ -15,7 +15,7 @@ import butterknife.BindView;
 
 public class MainActivity extends TrillbitActivity {
 
-    @BindView(R.id.navigation)
+    /*@BindView(R.id.navigation)
     BottomNavigationView mNavigationView;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -34,7 +34,7 @@ public class MainActivity extends TrillbitActivity {
             return false;
         }
 
-    };
+    };*/
 
     @Override
     protected int getContentView() {
@@ -43,7 +43,7 @@ public class MainActivity extends TrillbitActivity {
 
     @Override
     protected void onViewCreated(Bundle savedInstanceState) {
-        mNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//        mNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         loadFragment(HomeFragment.newInstance());
     }
 

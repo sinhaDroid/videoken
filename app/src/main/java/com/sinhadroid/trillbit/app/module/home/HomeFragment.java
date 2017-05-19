@@ -50,10 +50,10 @@ public class HomeFragment extends TrillbitFragment {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0: {
-                    return RecordFragment.newInstance(position);
+                    return RecordFragment.newInstance();
                 }
                 case 1: {
-                    return ProductFragment.newInstance(position);
+                    return ProductFragment.newInstance();
                 }
             }
             return null;
