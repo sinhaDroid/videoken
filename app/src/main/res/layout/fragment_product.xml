@@ -20,6 +20,6 @@
         android:layout_marginRight="@dimen/dp_16"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        app:srcCompat="@drawable/ic_dashboard_black_24dp" />
+        android:src="@drawable/ic_dashboard_black_24dp" />
 
 </RelativeLayout>

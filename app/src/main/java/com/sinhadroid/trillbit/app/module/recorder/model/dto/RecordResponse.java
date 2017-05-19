@@ -1,6 +1,8 @@
-package com.sinhadroid.trillbit.app.module.recorder.model.dto.response;
+package com.sinhadroid.trillbit.app.module.recorder.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.sinhadroid.trillbit.app.module.recorder.model.dto.Error;
+import com.sinhadroid.trillbit.app.module.recorder.model.dto.Payload;
 
 import javax.annotation.Generated;
 

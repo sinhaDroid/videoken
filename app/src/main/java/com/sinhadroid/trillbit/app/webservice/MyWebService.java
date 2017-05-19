@@ -8,12 +8,13 @@ import com.fasterxml.jackson.databind.type.CollectionType;
 import com.sinhadroid.trillbit.app.module.converter.JacksonConverterFactory;
 import com.sinhadroid.trillbit.app.module.login.model.dto.LogInRequest;
 import com.sinhadroid.trillbit.app.module.login.model.dto.LogInResponse;
+import com.sinhadroid.trillbit.app.module.recorder.model.dto.RecordResponse;
 
-import java.io.InputStream;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Interceptor;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
@@ -126,5 +127,9 @@ public class MyWebService {
 
     public Call<LogInResponse> getLogInRequest(LogInRequest logInRequest) {
         return mTrillbitService.callLoginApi(logInRequest);
+    }
+
+    public Call<RecordResponse> callAudioApi(MultipartBody.Part part) {
+        return mTrillbitService.callAudioApi(part);
     }
 }

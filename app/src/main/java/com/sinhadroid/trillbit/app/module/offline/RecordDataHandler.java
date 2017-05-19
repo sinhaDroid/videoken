@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.sinhadroid.trillbit.app.Constants;
 import com.sinhadroid.trillbit.app.module.common.AbstractDataHandler;
-import com.sinhadroid.trillbit.app.module.recorder.model.dto.response.Payload;
+import com.sinhadroid.trillbit.app.module.recorder.model.dto.Payload;
 import com.sinhadroid.trillbit.app.webservice.MyWebService;
 
 import java.util.ArrayList;
@@ -58,5 +58,21 @@ public class RecordDataHandler extends AbstractDataHandler {
         } else {
             return new ArrayList<>();
         }
+    }
+
+    public void saveNoOfCount(int count) {
+        setSharedIntData(Constants.SharedKeys.NO_OF_COUNT, count);
+    }
+
+    public Integer getNoOfCount() {
+        return getSharedIntData(Constants.SharedKeys.NO_OF_COUNT, 0);
+    }
+
+    public void setAudioRequest(boolean value) {
+        setSharedBooleanData(Constants.ApiKeys.AUDIO, value);
+    }
+
+    public boolean isAudioRequest() {
+        return getSharedBooleanData(Constants.ApiKeys.AUDIO, false);
     }
 }

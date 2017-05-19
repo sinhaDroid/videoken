@@ -13,4 +13,12 @@
     <string name="facebook_app_id">446817102344992</string>
     <string name="tab_title_record">Recorder</string>
     <string name="tab_title_product_info">Product Info</string>
+    <string name="pause_recording_button">Pause</string>
+    <string name="toast_recording_start">Recording started</string>
+    <string name="record_in_progress">Recording</string>
+    <string name="record_prompt">Tap the button to start recording</string>
+    <string name="resume_recording_button">Resume</string>
+    <string name="default_file_name">My Recording</string>
+    <string name="toast_recording_finish">Recording Finished</string>
+    <string name="log_out">Log out</string>
 </resources>

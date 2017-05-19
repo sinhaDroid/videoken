@@ -40,6 +40,7 @@ public class UserDataHandler extends AbstractDataHandler {
     }
 
     public void savePayload(Payload payload) {
+        saveAccessToken(payload.getAccessToken());
         setSharedStringData(Constants.SharedKeys.PAYLOAD, MyWebService.getInstance().getJsonStringFromObject(payload));
     }
 
@@ -48,5 +49,13 @@ public class UserDataHandler extends AbstractDataHandler {
                 .getObjectFromJson(getSharedStringData(Constants.SharedKeys.PAYLOAD),
                         new TypeReference<Payload>() {
                         });
+    }
+
+    private void saveAccessToken(String accessToken) {
+        setSharedStringData(Constants.ApiKeys.TOKEN, accessToken);
+    }
+
+    public String getAccessToken() {
+        return getSharedStringData(Constants.ApiKeys.TOKEN);
     }
 }

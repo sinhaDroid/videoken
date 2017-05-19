@@ -51,5 +51,6 @@ public class LoginActivity extends TrillbitActivity implements LoginView {
     @Override
     public void navigateToHomeActivity() {
         startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        finish();
     }
 }

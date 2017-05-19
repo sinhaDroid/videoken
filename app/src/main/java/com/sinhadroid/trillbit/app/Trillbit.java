@@ -59,6 +59,16 @@ public class Trillbit extends Application {
 
                 reqBuilder.addHeader(Constants.ApiKeys.CONTENT_TYPE, "application/json");
 
+                String accessToken = UserDataHandler.getInstance().getAccessToken();
+                if (null != accessToken) {
+                    reqBuilder.addHeader(Constants.ApiKeys.TOKEN, accessToken);
+                }
+
+                if (RecordDataHandler.getInstance().isAudioRequest()) {
+                    reqBuilder.addHeader("", "");
+                    RecordDataHandler.getInstance().setAudioRequest(false);
+                }
+
                 return chain.proceed(reqBuilder.build());
             }
         };

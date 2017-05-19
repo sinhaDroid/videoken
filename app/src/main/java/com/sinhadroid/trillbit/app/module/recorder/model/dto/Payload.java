@@ -1,4 +1,4 @@
-package com.sinhadroid.trillbit.app.module.recorder.model.dto.response;
+package com.sinhadroid.trillbit.app.module.recorder.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;

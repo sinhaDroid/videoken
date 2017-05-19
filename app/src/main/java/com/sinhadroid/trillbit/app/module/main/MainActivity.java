@@ -1,40 +1,17 @@
 package com.sinhadroid.trillbit.app.module.main;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.view.MenuItem;
+import android.view.View;
 
 import com.sinhadroid.trillbit.app.R;
+import com.sinhadroid.trillbit.app.Trillbit;
 import com.sinhadroid.trillbit.app.module.common.TrillbitActivity;
 import com.sinhadroid.trillbit.app.module.home.HomeFragment;
-import com.sinhadroid.trillbit.app.module.profile.ProfileFragment;
 
-import butterknife.BindView;
+import butterknife.OnClick;
 
 public class MainActivity extends TrillbitActivity {
-
-    /*@BindView(R.id.navigation)
-    BottomNavigationView mNavigationView;
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    loadFragment(HomeFragment.newInstance());
-                    return true;
-                case R.id.navigation_dashboard:
-                    loadFragment(ProfileFragment.newInstance());
-                    return true;
-            }
-            return false;
-        }
-
-    };*/
 
     @Override
     protected int getContentView() {
@@ -43,7 +20,6 @@ public class MainActivity extends TrillbitActivity {
 
     @Override
     protected void onViewCreated(Bundle savedInstanceState) {
-//        mNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         loadFragment(HomeFragment.newInstance());
     }
 
@@ -53,4 +29,8 @@ public class MainActivity extends TrillbitActivity {
                 .commit();
     }
 
+    @OnClick(R.id.logout)
+    public void onClickLogOut(View view) {
+        Trillbit.getInstance().logout();
+    }
 }
