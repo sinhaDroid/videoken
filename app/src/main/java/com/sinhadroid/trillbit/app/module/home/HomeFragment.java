@@ -9,7 +9,7 @@ import android.support.v4.view.ViewPager;
 import com.astuetz.PagerSlidingTabStrip;
 import com.sinhadroid.trillbit.app.R;
 import com.sinhadroid.trillbit.app.module.common.TrillbitFragment;
-import com.sinhadroid.trillbit.app.module.productinfo.ProductFragment;
+import com.sinhadroid.trillbit.app.module.productinfo.view.ProductFragment;
 import com.sinhadroid.trillbit.app.module.recorder.view.RecordFragment;
 
 import butterknife.BindView;

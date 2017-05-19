@@ -8,7 +8,6 @@ import android.net.NetworkInfo;
 
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
-import com.sinhadroid.trillbit.app.module.offline.ProductDataHandler;
 import com.sinhadroid.trillbit.app.module.offline.RecordDataHandler;
 import com.sinhadroid.trillbit.app.module.offline.UserDataHandler;
 import com.sinhadroid.trillbit.app.module.splash.SplashActivity;
@@ -70,7 +69,6 @@ public class Trillbit extends Application {
 
         UserDataHandler.getInstance().init(context);
         RecordDataHandler.getInstance().init(context);
-        ProductDataHandler.getInstance().init(context);
     }
 
     public void logout() {
@@ -84,7 +82,6 @@ public class Trillbit extends Application {
         // TODO: save according to id
         UserDataHandler.getInstance().clearAll();
         RecordDataHandler.getInstance().clearAll();
-        ProductDataHandler.getInstance().clearAll();
     }
 
     private void navigateToLogin() {
