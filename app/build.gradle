@@ -64,6 +64,12 @@ dependencies {
     compile dependencies.butterknife
     annotationProcessor dependencies.butterknifeCompiler
 
+    // pager for tabs
+    compile dependencies.materialtabstrip
+
+    // fab
+    compile dependencies.fab
+
     // To parse the json output using the Jackson parser
     compile dependencies.converterJackson
     compile dependencies.javaxAnnotation

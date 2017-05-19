@@ -11,4 +11,6 @@
     <string name="login_failed">Login failed</string>
     <string name="request_email_permission">Kindly provide permission to access your email id</string>
     <string name="facebook_app_id">446817102344992</string>
+    <string name="tab_title_record">Recorder</string>
+    <string name="tab_title_product_info">Product Info</string>
 </resources>

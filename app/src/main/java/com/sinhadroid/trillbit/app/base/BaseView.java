@@ -1,5 +1,6 @@
 package com.sinhadroid.trillbit.app.base;
 
+import android.content.Context;
 import android.support.annotation.StringRes;
 import android.support.v4.app.FragmentActivity;
 
@@ -10,6 +11,8 @@ import android.support.v4.app.FragmentActivity;
 public interface BaseView {
 
     FragmentActivity getActivity();
+
+    Context getContext();
 
     void showLoading();
 

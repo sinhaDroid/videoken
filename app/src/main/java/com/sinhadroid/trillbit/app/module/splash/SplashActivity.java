@@ -6,7 +6,7 @@ import android.os.Handler;
 
 import com.sinhadroid.trillbit.app.R;
 import com.sinhadroid.trillbit.app.module.common.TrillbitActivity;
-import com.sinhadroid.trillbit.app.module.home.view.HomeActivity;
+import com.sinhadroid.trillbit.app.module.main.MainActivity;
 import com.sinhadroid.trillbit.app.module.login.view.LoginActivity;
 import com.sinhadroid.trillbit.app.module.offline.UserDataHandler;
 
@@ -31,7 +31,7 @@ public class SplashActivity extends TrillbitActivity {
     }
 
     private void navigateToHome() {
-        startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+        startActivity(new Intent(SplashActivity.this, MainActivity.class));
         finish();
     }
 

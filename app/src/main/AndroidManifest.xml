@@ -8,6 +8,10 @@
     <!-- To identify the internet states -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <!-- To access the record -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name=".Trillbit"
         android:allowBackup="true"
@@ -30,7 +34,7 @@
             android:name=".module.login.view.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".module.home.view.HomeActivity"
+            android:name=".module.main.MainActivity"
             android:screenOrientation="portrait" />
 
         <meta-data

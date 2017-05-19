@@ -3,6 +3,8 @@ ext {
 
     supportLibraryVersion = '25.3.1'
     butterknifeVersion = '8.5.1'
+    fabVersion = '1.1.0'
+    materialTabStringVerions = '1.0.6'
     playServicesVersion = '9.4.0'
     facebookSdkVersion = '[4,5)'
     retrofitVersion = '2.0.2'
@@ -22,6 +24,10 @@ ext {
             // Butterknife dependencies
             butterknife         :   "com.jakewharton:butterknife:$butterknifeVersion",
             butterknifeCompiler :   "com.jakewharton:butterknife-compiler:$butterknifeVersion",
+
+            // PagerSlidingTab
+            fab                 :   "com.melnykov:floatingactionbutton:$fabVersion",
+            materialtabstrip    :   "com.jpardogo.materialtabstrip:library:$materialTabStringVerions",
 
             // Google play services dependencies
             playServicesAuth    :   "com.google.android.gms:play-services-auth:$playServicesVersion",

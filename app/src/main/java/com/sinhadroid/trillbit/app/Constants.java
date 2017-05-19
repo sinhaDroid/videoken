@@ -12,7 +12,12 @@ public interface Constants {
     }
 
     public interface SharedKeys {
-        String PAYLOAD = "payload";
         String LOGGED_IN_USER = "loggedInUser";
+        String PAYLOAD = "payload";
+        String RECORD_PAYLOAD = "recordPayload";
+    }
+
+    public interface BundleKeys {
+        String ARG_POSITION = "position";
     }
 }

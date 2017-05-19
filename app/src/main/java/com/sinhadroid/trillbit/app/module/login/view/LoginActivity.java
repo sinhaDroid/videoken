@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.sinhadroid.trillbit.app.R;
 import com.sinhadroid.trillbit.app.module.common.TrillbitActivity;
-import com.sinhadroid.trillbit.app.module.home.view.HomeActivity;
+import com.sinhadroid.trillbit.app.module.main.MainActivity;
 import com.sinhadroid.trillbit.app.module.login.presenter.LoginPresenter;
 import com.sinhadroid.trillbit.app.module.login.presenter.LoginPresenterImpl;
 
@@ -50,6 +50,6 @@ public class LoginActivity extends TrillbitActivity implements LoginView {
 
     @Override
     public void navigateToHomeActivity() {
-        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+        startActivity(new Intent(LoginActivity.this, MainActivity.class));
     }
 }
