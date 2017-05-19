@@ -16,7 +16,7 @@
     <dimen name="dp_80">80dp</dimen>
     <dimen name="dp_132">132dp</dimen>
     <dimen name="dp_280">280dp</dimen>
-    
+
     <dimen name="sp_15">15sp</dimen>
     <dimen name="sp_20">20sp</dimen>
 </resources>

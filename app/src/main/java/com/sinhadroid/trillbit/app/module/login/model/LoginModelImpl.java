@@ -1,10 +1,15 @@
 package com.sinhadroid.trillbit.app.module.login.model;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 
+import com.google.android.gms.auth.GoogleAuthException;
+import com.google.android.gms.auth.GoogleAuthUtil;
+import com.google.android.gms.auth.UserRecoverableAuthException;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -27,6 +32,7 @@ import com.sinhadroid.trillbit.app.module.offline.UserDataHandler;
 import com.sinhadroid.trillbit.app.webservice.MyWebService;
 import com.sinhadroid.trillbit.app.webservice.TrillbitCallBack;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 import retrofit2.Call;
@@ -34,7 +40,7 @@ import retrofit2.Response;
 
 public class LoginModelImpl implements LoginModel, GoogleApiClient.OnConnectionFailedListener {
 
-    private static final String SERVER_CLIENT_ID = "869911479338-vuf27bk4j3ts45aek7h826d55p0jdp7v.apps.googleusercontent.com";
+    private static final String SERVER_CLIENT_ID = "869911479338-qitgmnqv287f2060oi0bbn34uc1st2me.apps.googleusercontent.com";
 
     private static final String LOGIN_SCOPE = "https://www.googleapis.com/auth/plus.login";
 
@@ -97,7 +103,7 @@ public class LoginModelImpl implements LoginModel, GoogleApiClient.OnConnectionF
     @Override
     public void triggerGoogle() {
         if (Trillbit.getInstance().hasNetworkConnection()) {
-            mOnLoginModelListener.onGoogleSignIn(Auth.GoogleSignInApi.getSignInIntent((mGoogleApiClient)));
+            mOnLoginModelListener.onGoogleSignIn(Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient));
         } else {
             mOnLoginModelListener.onNoInternet();
         }
@@ -110,11 +116,11 @@ public class LoginModelImpl implements LoginModel, GoogleApiClient.OnConnectionF
 
     private void handleSignInResult(GoogleSignInResult result) {
         if (null != result) {
-            Status status = result.getStatus();
             if (result.isSuccess()) {
                 // Signed in successfully, show authenticated UI.
 
-                callTrillbitLoginApi(getLoginRequestFromGoogle(result.getSignInAccount()));
+                getGoogleAccessToken(result.getSignInAccount());
+//                callTrillbitLoginApi(getLoginRequestFromGoogle(result.getSignInAccount()));
                 return;
             }
         }
@@ -127,7 +133,7 @@ public class LoginModelImpl implements LoginModel, GoogleApiClient.OnConnectionF
         mOnLoginModelListener.onLoginFailed();
     }
 
-    /*private void getGoogleAccessToken(final GoogleSignInAccount account) {
+    private void getGoogleAccessToken(final GoogleSignInAccount account) {
         mOnLoginModelListener.onGettingData();
 
         AsyncTask<Void, Void, String> task = new AsyncTask<Void, Void, String>() {
@@ -136,7 +142,7 @@ public class LoginModelImpl implements LoginModel, GoogleApiClient.OnConnectionF
             protected String doInBackground(Void... params) {
 
                 try {
-                    return GoogleAuthUtil.getToken(Trillbit.getInstance().getBaseContext(), account.getServerAuthCode(), SCOPES);
+                    return GoogleAuthUtil.getToken(Trillbit.getInstance().getBaseContext(), account.getEmail(), SCOPES);
                     // TODO: remove coment line
                 } catch (IOException transientEx) {
                     // Network or server error, try later
@@ -160,7 +166,7 @@ public class LoginModelImpl implements LoginModel, GoogleApiClient.OnConnectionF
                 if (null != token) {
                     Log.d("GPlus Token", token);
 
-                    callTrillbitLoginApi(getLoginRequestFromGoogle(account));
+                    callTrillbitLoginApi(getLoginRequestFromGoogle(account, token));
                     return;
                 }
 
@@ -169,13 +175,13 @@ public class LoginModelImpl implements LoginModel, GoogleApiClient.OnConnectionF
 
         };
         task.execute();
-    }*/
+    }
 
-    private LogInRequest getLoginRequestFromGoogle(GoogleSignInAccount account) {
+    private LogInRequest getLoginRequestFromGoogle(GoogleSignInAccount account, String accessToken) {
         LogInRequest logInRequest = new LogInRequest();
         logInRequest.setLoginType(Constants.AccessProviders.GOOGLE);
         logInRequest.setUserId(account.getId());
-        logInRequest.setAuth(account.getIdToken());
+        logInRequest.setAuth(accessToken);
 
         return logInRequest;
     }

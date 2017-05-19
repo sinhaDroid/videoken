@@ -1,11 +1,9 @@
 package com.sinhadroid.trillbit.app.utils;
 
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.provider.Settings;
 
 import com.sinhadroid.trillbit.app.R;
 
@@ -28,10 +26,5 @@ public final class CommonUtils {
         progressDialog.setCancelable(true);
         progressDialog.setCanceledOnTouchOutside(false);
         return progressDialog;
-    }
-
-    @SuppressLint("all")
-    public static String getDeviceId(Context context) {
-        return Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
     }
 }

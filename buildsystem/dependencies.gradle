@@ -6,7 +6,7 @@ ext {
     fabVersion = '1.1.0'
     glideVersion = '3.7.0'
     materialTabStringVerions = '1.0.6'
-    playServicesVersion = '9.4.0'
+    playServicesVersion = '9.0.0'
     facebookSdkVersion = '[4,5)'
     retrofitVersion = '2.0.2'
     javaxAnnotationVersion = '10.0-b28'

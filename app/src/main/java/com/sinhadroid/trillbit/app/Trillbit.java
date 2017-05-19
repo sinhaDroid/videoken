@@ -82,7 +82,10 @@ public class Trillbit extends Application {
     }
 
     public void logout() {
-        clearAll();
+        // TODO: to clear all data
+//        clearAll();
+
+        UserDataHandler.getInstance().clearData(Constants.SharedKeys.LOGGED_IN_USER);
 
         navigateToLogin();
     }

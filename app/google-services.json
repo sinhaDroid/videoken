@@ -13,7 +13,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "869911479338-2atebj2diube47e8ifheqbiqs8rsglii.apps.googleusercontent.com",
+          "client_id": "869911479338-qitgmnqv287f2060oi0bbn34uc1st2me.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "869911479338-3vbbs3im8898oh420iqami2d9j407pae.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.sinhadroid.trillbit.app",
@@ -21,13 +25,56 @@
           }
         },
         {
-          "client_id": "869911479338-e2122afmhs6j10gob584rbesh6oum9s9.apps.googleusercontent.com",
+          "client_id": "869911479338-14hdpoeeeoe81pu05gsk7gdfhpuetc6u.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCYnUlSLgbqYij1g41ZjlB0crwSTSXeNU0"
+          "current_key": "AIzaSyBSfJcCMQ1DZWUBGcFBaEYqMGNS_muAMy0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869911479338:android:1c6515d26bbe7c88",
+        "android_client_info": {
+          "package_name": "com.sinhadroid.trillbit.app.stage.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869911479338-jgaheaalhf1igi5cpr96g35dcas69qjj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sinhadroid.trillbit.app.stage.debug",
+            "certificate_hash": "05022c9831ba14c8cfc5defc5e85d79f710fa228"
+          }
+        },
+        {
+          "client_id": "869911479338-qitgmnqv287f2060oi0bbn34uc1st2me.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "869911479338-14hdpoeeeoe81pu05gsk7gdfhpuetc6u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSfJcCMQ1DZWUBGcFBaEYqMGNS_muAMy0"
         }
       ],
       "services": {
