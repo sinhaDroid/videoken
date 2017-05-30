@@ -9,7 +9,7 @@ public interface IMainPresenter {
 
     void initializeYouTubeApi();
 
-    void setYouTubeUrl(String searchString);
+    void setYouTubeUrl();
 
     void onResume();
 }

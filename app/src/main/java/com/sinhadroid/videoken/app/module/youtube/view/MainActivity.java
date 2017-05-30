@@ -10,13 +10,11 @@ import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.sinhadroid.videoken.app.R;
+import com.sinhadroid.videoken.app.module.offline.VideoKenDataHandler;
 import com.sinhadroid.videoken.app.module.playback.OnRecordListener;
-import com.sinhadroid.videoken.app.module.recorder.model.VideoKen;
 import com.sinhadroid.videoken.app.module.recorder.view.RecordFragment;
 import com.sinhadroid.videoken.app.module.youtube.presenter.IMainPresenter;
 import com.sinhadroid.videoken.app.module.youtube.presenter.MainPresenterImpl;
-
-import butterknife.OnClick;
 
 public class MainActivity extends YouTubeBaseActivity implements IMainView, OnRecordListener {
 
@@ -51,7 +49,8 @@ public class MainActivity extends YouTubeBaseActivity implements IMainView, OnRe
         if (searchString.isEmpty()) {
             showToastMessage(getString(R.string.enter_url));
         } else {
-            mIMainPresenter.setYouTubeUrl(searchString);
+            VideoKenDataHandler.getInstance().saveId(searchString);
+            mIMainPresenter.setYouTubeUrl();
         }
     }
 
@@ -90,8 +89,8 @@ public class MainActivity extends YouTubeBaseActivity implements IMainView, OnRe
     }
 
     @Override
-    public void updateAdapter(String id) {
-        mRecordFragment.updateAdapter(id);
+    public void updateAdapter() {
+        mRecordFragment.updateAdapter();
     }
 
     @Override

@@ -14,7 +14,6 @@ public class RecordPresenterImpl implements RecordPresenter {
     private RecordView mRecordView;
 
     private RecordAdapter mRecordAdapter;
-    private String id;
     private String result;
 
     private RecordPresenterImpl(RecordView recordView) {
@@ -32,7 +31,7 @@ public class RecordPresenterImpl implements RecordPresenter {
         if (null != context) {
             mRecordView.setAdapter(mRecordAdapter = new RecordAdapter(context));
 
-            updateAdapter(VideoKenDataHandler.getInstance().getYouTubeCommentMap().get(id));
+            updateAdapter(VideoKenDataHandler.getInstance().getYouTubeCommentMap().get(VideoKenDataHandler.getInstance().getId()));
         }
     }
 
@@ -46,14 +45,13 @@ public class RecordPresenterImpl implements RecordPresenter {
             videoKen.setRecordedText(result);
         }
 
-        VideoKenDataHandler.getInstance().saveYouTubeComment(id, videoKen);
+        VideoKenDataHandler.getInstance().saveYouTubeComment(VideoKenDataHandler.getInstance().getId(), videoKen);
         mRecordAdapter.add(videoKen, 0);
     }
 
     @Override
-    public void updateAdapter(String id) {
-        this.id = id;
-        updateAdapter(VideoKenDataHandler.getInstance().getYouTubeCommentMap().get(id));
+    public void updateAdapter() {
+        updateAdapter(VideoKenDataHandler.getInstance().getYouTubeCommentMap().get(VideoKenDataHandler.getInstance().getId()));
     }
 
     @Override

@@ -47,8 +47,7 @@ public class MainPresenterImpl implements IMainPresenter, YouTubePlayer.OnInitia
     }
 
     @Override
-    public void setYouTubeUrl(String searchString) {
-        playedId = searchString;
+    public void setYouTubeUrl() {
 
         cueVideo();
     }
@@ -73,6 +72,8 @@ public class MainPresenterImpl implements IMainPresenter, YouTubePlayer.OnInitia
     }
 
     private void cueVideo() {
+        playedId = VideoKenDataHandler.getInstance().getId();
+
         if (!b) {
             mYouTubePlayer.cueVideo(playedId);
         }
@@ -129,7 +130,7 @@ public class MainPresenterImpl implements IMainPresenter, YouTubePlayer.OnInitia
     @Override
     public void onLoaded(String s) {
         VideoKenDataHandler.getInstance().saveYouTubeVideoId(s);
-        mIMainView.updateAdapter(s);
+        mIMainView.updateAdapter();
     }
 
     @Override

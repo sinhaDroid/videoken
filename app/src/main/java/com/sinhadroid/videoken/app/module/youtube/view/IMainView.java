@@ -23,5 +23,5 @@ public interface IMainView {
 
     void hideVoice();
 
-    void updateAdapter(String id);
+    void updateAdapter();
 }

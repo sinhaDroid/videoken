@@ -5,7 +5,7 @@ public interface RecordPresenter {
 
     void sendItem(String mFileName, String filePath, long mElapsedMillis);
 
-    void updateAdapter(String id);
+    void updateAdapter();
 
     void sendRecordedText(String result);
 }

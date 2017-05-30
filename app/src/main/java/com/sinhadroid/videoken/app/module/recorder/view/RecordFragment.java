@@ -213,8 +213,8 @@ public class RecordFragment extends VideoKenFragment implements RecordView, Conv
         fab.setVisibility(View.GONE);
     }
 
-    public void updateAdapter(String id) {
-        mRecordPresenter.updateAdapter(id);
+    public void updateAdapter() {
+        mRecordPresenter.updateAdapter();
     }
 
     @Override

@@ -45,6 +45,19 @@ public class VideoKenDataHandler extends AbstractDataHandler {
         return mSharedPreferences;
     }
 
+    public void saveId(String id) {
+        setSharedStringData("VIDEO_ID", id);
+    }
+
+    public String getId() {
+        String video_id = getSharedStringData("VIDEO_ID");
+
+        if (null == video_id) {
+            video_id = "fhWaJi1Hsfo";
+        }
+        return video_id;
+    }
+
 
     public void saveYouTubeVideoId(String id) {
         List<String> youTubeVideoIds = getYouTubeVideoIds();
