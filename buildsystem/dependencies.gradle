@@ -9,10 +9,12 @@ ext {
     playServicesVersion = '9.0.0'
     facebookSdkVersion = '[4,5)'
     retrofitVersion = '2.0.2'
+    gsonVersion = '2.8.0'
     javaxAnnotationVersion = '10.0-b28'
     okhttp3Version = '3.2.0'
     junitVersion = '4.12'
     espressoVersion = '2.2.2'
+
 
     dependencies = [
             // App dependencies
@@ -41,6 +43,9 @@ ext {
             // JacksonConverter dependencies
             converterJackson    :   "com.squareup.retrofit2:converter-jackson:$retrofitVersion",
             javaxAnnotation     :   "org.glassfish:javax.annotation:$javaxAnnotationVersion",
+
+            // Gson
+            gson                :   "com.google.code.gson:gson:$gsonVersion",
 
             // OkHttp3 dependencies
             loggingInterceptor  :   "com.squareup.okhttp3:logging-interceptor:$okhttp3Version",

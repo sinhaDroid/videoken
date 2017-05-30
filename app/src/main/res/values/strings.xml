@@ -1,16 +1,10 @@
 <resources>
-    <string name="app_name">Trillbit</string>
-    <string name="login_trillbit">Login Trillbit</string>
-    <string name="sign_with_fb">Sign in with Facebook</string>
-    <string name="sign_with_google">Sign in with Google</string>
+    <string name="app_name">Videoken</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_home">Home</string>
     <string name="title_profile">Profile</string>
-    <string name="login_cancelled">Login cancelled</string>
     <string name="no_network_connection">No internet connection available</string>
     <string name="login_failed">Login failed</string>
-    <string name="request_email_permission">Kindly provide permission to access your email id</string>
-    <string name="facebook_app_id">446817102344992</string>
     <string name="tab_title_record">Recorder</string>
     <string name="tab_title_product_info">Product Info</string>
     <string name="pause_recording_button">Pause</string>
@@ -20,5 +14,7 @@
     <string name="resume_recording_button">Resume</string>
     <string name="default_file_name">My Recording</string>
     <string name="toast_recording_finish">Recording Finished</string>
-    <string name="log_out">Log out</string>
+    <string name="search_title">Search You Tube Videos</string>
+    <string name="search">Search</string>
+    <string name="enter_url">Enter You Tube Video Url</string>
 </resources>
