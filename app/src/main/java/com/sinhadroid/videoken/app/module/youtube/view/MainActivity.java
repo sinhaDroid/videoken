@@ -1,8 +1,8 @@
 package com.sinhadroid.videoken.app.module.youtube.view;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -11,6 +11,7 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.sinhadroid.videoken.app.R;
 import com.sinhadroid.videoken.app.module.playback.OnRecordListener;
+import com.sinhadroid.videoken.app.module.recorder.model.VideoKen;
 import com.sinhadroid.videoken.app.module.recorder.view.RecordFragment;
 import com.sinhadroid.videoken.app.module.youtube.presenter.IMainPresenter;
 import com.sinhadroid.videoken.app.module.youtube.presenter.MainPresenterImpl;
@@ -39,17 +40,12 @@ public class MainActivity extends YouTubeBaseActivity implements IMainView, OnRe
         mIMainPresenter.onCreate();
     }
 
-    public static Activity getActivity() {
-        return new MainActivity();
-    }
-
     @Override
     public YouTubePlayerView getYouTubePlayerView() {
         return mYouTubePlayerView;
     }
 
-    @OnClick(R.id.search_option)
-    public void onClickSearch() {
+    public void onClickSearch(View view) {
         String searchString = search.getText().toString();
 
         if (searchString.isEmpty()) {
