@@ -65,6 +65,9 @@ public class RecordPresenterImpl implements RecordPresenter {
             mRecordAdapter.clear();
             mRecordAdapter.addAll(videoKens);
             mRecordAdapter.notifyDataSetChanged();
+        } else {
+            mRecordAdapter.clear();
+            mRecordAdapter.notifyDataSetChanged();
         }
     }
 }

@@ -51,6 +51,7 @@ public class MainActivity extends YouTubeBaseActivity implements IMainView, OnRe
         } else {
             VideoKenDataHandler.getInstance().saveId(searchString);
             mIMainPresenter.setYouTubeUrl();
+            updateAdapter();
         }
     }
 
